@@ -1,6 +1,7 @@
+from util import *
 from collections import Counter
-from nltk.corpus import stopwords
 
+# Tokens from our custopm corpus
 lemmatized_docs=[[["experimental", "investigation", "of", "the", "aerodynamics", "of", "a", "wing", "in", "a", "slipstream", "."], ["an", "experimental", "study", "of", "a", "wing", "in", "a", "propeller", "slipstream", "be", "make", "in", "order", "to", "determine", "the", "spanwise", "distribution", "of", "the", "lift", "increase", "due", "to", "slipstream", "at", "different", "angle", "of", "attack", "of", "the", "wing", "and", "at", "different", "free", "stream", "to", "slipstream", "velocity", "ratio", "."]]]
 
 # Flatten the tokenized document list
