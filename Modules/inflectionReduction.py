@@ -1,6 +1,4 @@
 from util import *
-import nltk
-
 
 # Add your import statements here
 from nltk.stem import WordNetLemmatizer
