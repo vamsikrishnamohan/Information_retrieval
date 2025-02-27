@@ -4,13 +4,15 @@ from util import *
 from nltk.stem import WordNetLemmatizer
 from nltk import pos_tag
 from nltk.corpus import wordnet
+from nltk.stem import PorterStemmer
 
 #Note:
 '''For lemmatization Pos_tagging is important because using pos_tagging we can use the base word of the word or elase every word is treated as noun running will be running rather than run. Therefore we we'll use post tagging from nltk  '''
 class InflectionReduction:
     
     def __init__(self):
-        self.lemmatizer = WordNetLemmatizer()
+        self.lemmatizer = WordNetLemmatizer() # Lemmatization
+        self.stemmer = PorterStemmer() #Stemmer 
 
     def get_wordnet_pos(self, word):
         """
@@ -36,7 +38,16 @@ class InflectionReduction:
             A list of lists where each sub-list contains lemmatized tokens.
         """
 
-        reducedText = [[self.lemmatizer.lemmatize(word, self.get_wordnet_pos(word)) for word in sentence] for sentence in text]
+        reducedText_lemmatize = [[self.lemmatizer.lemmatize(word, self.get_wordnet_pos(word)) for word in sentence] for sentence in text]
+        reducedText_stemmer = [[self.stemmer.stem(word) for word in sentence] for sentence in text]
         
-        return reducedText
-	
+        return reducedText_lemmatize, reducedText_stemmer
+
+#Example Test case:
+
+# text = [["running", "quickly","studies"], ["cats", "are", "playing"], ["better", "solutions", "were", "found"]]
+# inflectionReducer = InflectionReduction()
+
+# lemmatize_tokens,Stemming_tokens=inflectionReducer.reduce(text)
+# print("Steming Tokens:",Stemming_tokens)
+# print("Lemmatize Tokens:",lemmatize_tokens)	
