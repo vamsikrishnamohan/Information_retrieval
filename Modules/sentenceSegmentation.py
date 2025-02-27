@@ -1,5 +1,5 @@
 from util import *
-import nltk
+
 nltk.download("punkt_tab")
 
 # Add your import statements here
@@ -53,18 +53,10 @@ class SentenceSegmentation():
 			A list of strings where each strin is a single sentence
 		"""
 
-		# segmentedText = None
+		
 
 		#Fill in code here
-		# Tokenizer=PunktSentenceTokenizer()
-		# segmentedText=Tokenizer.tokenize(text)
-		segmentedText=sent_tokenize(text)
+
+		segmentedText=sent_tokenize(text)   # internally calls Punkt Tokenizer 
 		
 		return segmentedText
-
-ckeck=SentenceSegmentation()
-text="hey man , whats up. , iam Dr. vk well know gastrologist. i have a girlfriend who is a dentist. nice to meet to man."
-naive_sentences=ckeck.naive(text)
-punkt_sentences=ckeck.punkt(text)
-print(f"naive : {naive_sentences}")
-print(f"punkt : {punkt_sentences}")

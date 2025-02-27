@@ -1,6 +1,6 @@
 from util import *
 import nltk
-# nltk.download('averaged_perceptron_tagger_eng')
+
 
 # Add your import statements here
 from nltk.stem import WordNetLemmatizer
@@ -42,8 +42,3 @@ class InflectionReduction:
         
         return reducedText
 	
-
-text = [["running", "quickly"], ["cats", "are", "playing"], ["better", "solutions", "were", "found"]]
-lemma=InflectionReduction()
-reduced_text=lemma.reduce(text)
-print(reduced_text)

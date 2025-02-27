@@ -50,21 +50,3 @@ class Tokenization():
 
         return tokenizedText
 
-
-#checking the code
-text = [
-    "Hey man, what's up?",
-    "I am Dr. VK, a well-known gastroenterologist!",
-    "I have a girlfriend who is a dentist.",
-    "Nice to meet you, man."
-]
-
-tokenizer = Tokenization()
-
-# Naïve Tokenization
-naive_tokens = tokenizer.naive(text)
-print("Naïve Tokenization:", naive_tokens.size)
-
-# Penn Treebank Tokenization
-ptb_tokens = tokenizer.pennTreeBank(text)
-print("Penn Treebank Tokenization:", ptb_tokens)

@@ -1,7 +1,5 @@
-from util import *
-
 # Add your import statements here
-import nltk
+from util import *
 from nltk.corpus import stopwords
 
 class StopwordRemoval():
@@ -29,12 +27,3 @@ class StopwordRemoval():
 		stopwordsRemovedText=[[word for word in sentence if word.lower() not in stop_words]for sentence in text]
 
 		return stopwordsRemovedText
-
-text = [["running", "quickly","there"], ["cats", "are", "playing"], ["better", "is","to","solutions", "were", "found"]]
-remover=StopwordRemoval()
-stopwordremovedtext=remover.fromList(text)
-print(stopwordremovedtext)
-
-
-
-	
